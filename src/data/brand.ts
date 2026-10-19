@@ -1,26 +1,24 @@
-// HOUSE CALL BRONZE — single source of truth.
-// Pricing and business details must match the owner's supplied menu exactly.
-
+// Pro Az Web — brand configuration for ProAzWeb.com
 export const SITE = {
-  name: 'House Call Bronze',
-  url: 'https://housecallbronze.com',
+  name: 'Pro Az Web',
+  url: 'https://ProAzWeb.com',
   language: 'en',
 };
 
 export const BRAND = {
-  name: 'HOUSE CALL BRONZE',
-  artist: 'MEESH',
-  tagline: 'Custom mobile spray tans',
-  positioning: 'Custom spray tans. Your place or mine.',
-  serviceArea: 'Spokane + nearby',
-  studioAddress: 'Meesh’s studio · Spokane, WA',
-  instagramHandle: '@house.call.bronze',
-  instagramUrl: 'https://www.instagram.com/house.call.bronze',
-  whatsappUrl: 'https://wa.me/15097032928',
-  facebookUrl: 'https://www.facebook.com/share/19kDq7egCm/?mibextid=wwXIfr',
-  tiktokUrl: 'https://www.tiktok.com/@housecallbronze?_r=1&_t=ZT-9Aap63thQSc',
-  phoneDisplay: '509-703-2928',
-  phoneE164: '+15097032928',
+  name: 'PRO AZ WEB',
+  artist: 'Pro Az Web',
+  tagline: 'Premium web design for businesses ready to look established and convert more',
+  positioning: 'Custom website design and development for founders, service businesses, and premium companies.',
+  serviceArea: 'Phoenix · Arizona · Worldwide',
+  studioAddress: 'Pro Az Web · Phoenix, AZ',
+  instagramHandle: '@ProAzWeb',
+  instagramUrl: 'https://www.instagram.com/ProAzWeb',
+  whatsappUrl: 'https://wa.me/15551234567',
+  facebookUrl: 'https://www.facebook.com/ProAzWeb',
+  tiktokUrl: 'https://www.tiktok.com',
+  phoneDisplay: '+1 (555) 123-4567',
+  phoneE164: '+15551234567',
 };
 
 export const TEL_LINK = `tel:${BRAND.phoneE164}`;
@@ -35,79 +33,39 @@ export const SOCIAL_LINKS = [
 export const buildSmsLink = (body: string) =>
   `sms:${BRAND.phoneE164}?body=${encodeURIComponent(body)}`;
 
-// Owner-supplied brand imagery (optimized WebP copies of the supplied files).
 export const IMAGES = {
-  // Home hero — owner-supplied three-panel bronzed-skin photo (optimized WebP, 1476×704)
-  heroTriptych: 'https://d64gsuwffb70l.cloudfront.net/6ab7c11864006fdf3a05a860_1790727128722_b1ff93b4.webp',
-  // image_2 — illustrated brand poster ("House Call Bronze · Glow")
-  poster: 'https://d64gsuwffb70l.cloudfront.net/6ab7c11864006fdf3a05a860_1790716147195_e8b423a8.webp',
-  // image_3 — gold HCB monogram on dark leather (favicon, app icon)
-  monogram: 'https://d64gsuwffb70l.cloudfront.net/6ab7c11864006fdf3a05a860_1790716148019_7e953443.webp',
-  // image_6 — dark leather banner with monogram + wordmark (footer / dividers)
-  leatherBanner: 'https://d64gsuwffb70l.cloudfront.net/6ab7c11864006fdf3a05a860_1790716147834_ae2280f0.webp',
-  // image_7 — Meesh with dual spray guns, on near-black (services / booking)
-  artistCutout: 'https://d64gsuwffb70l.cloudfront.net/6ab7c11864006fdf3a05a860_1790716147881_7d885109.webp',
-  // image_9 — About headshot (small optimized copy, 640px)
-  headshot: 'https://d64gsuwffb70l.cloudfront.net/6ab7c11864006fdf3a05a860_1790727128870_b7f54ff0.webp',
-  // image_8 — full-length lifestyle photo in cream dress
-  lifestyle: 'https://d64gsuwffb70l.cloudfront.net/6ab7c11864006fdf3a05a860_1790716147227_77532aba.webp',
-  // image_5 — official merch tee flatlay
-  tee: 'https://d64gsuwffb70l.cloudfront.net/6ab7c11864006fdf3a05a860_1790716147300_6b24d92d.webp',
-  og: 'https://d64gsuwffb70l.cloudfront.net/6ab7c11864006fdf3a05a860_1790727128722_b1ff93b4.webp',
+  heroTriptych:
+    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80',
+  poster:
+    'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80',
+  monogram:
+    'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=512&q=80',
+  leatherBanner:
+    'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
+  artistCutout:
+    'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
+  headshot:
+    'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80',
+  lifestyle:
+    'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
+  tee: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80',
+  og: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80',
   fallbackSilk:
-    'https://d64gsuwffb70l.cloudfront.net/6ab7c11864006fdf3a05a860_1790427509238_d5a67148.jpg',
+    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80',
 };
 
-// Retail. Each item links out to the brand's official product page.
-// Add brand products here with their official URLs — nothing is invented.
-export interface RetailItem {
-  id: string;
-  brand: string;
-  name: string;
-  description: string;
-  image: string;
-  href: string;
-  cta: string;
-}
-
-export const RETAIL: RetailItem[] = [
-  {
-    id: 'hcb-tee',
-    brand: 'House Call Bronze',
-    name: 'The House Tee',
-    description: 'Cream heavyweight tee, embroidered HOUSE CALL BRONZE with a quiet GLOW down the side.',
-    image: IMAGES.tee,
-    href: 'https://www.instagram.com/house.call.bronze',
-    cta: 'Ask Meesh on Instagram',
-  },
-];
-
-// About Meesh — owner-supplied copy.
 export const ABOUT = {
-  quote: 'Nice to meet you, I’m Meesh, and our journey has only just begun…',
-  accolade: 'Named the #1 Best Mobile Sunless Technician in the United States',
-  // Owner-supplied story, in order. `pull` paragraphs render as emphasized pull quotes.
+  quote: 'We create polished websites that help brands look credible and convert better.',
+  accolade: 'Professional websites built for brands that expect quality.',
   story: [
-    { text: 'What began as a love for that effortless, sun-kissed glow became something much more personal.' },
-    {
-      text: 'After experiencing the effects of sun damage and navigating my own skin-related health challenges, I began to see tanning differently. I still loved the confidence and warmth that a beautiful tan could bring—but I no longer wanted that glow to come at the expense of my skin.',
-    },
-    { text: 'So, I turned that experience into a passion.', pull: true },
-    {
-      text: 'I became deeply committed to finding a better way to achieve the glow we love while protecting the skin we have. That journey inspired me to create House Call Bronze—a personalized approach to tanning designed around you, your skin, and your life.',
-    },
-    { text: 'I founded House Call Bronze around one simple belief:' },
-    { text: 'Your tan should fit your life, not the other way around.', pull: true },
-    {
-      text: 'Every tan is thoughtfully customized and mixed for your skin tone, your desired glow, and the look you want to feel your absolute best in. No UV. No unnecessary sun exposure. Just a beautiful, sun-kissed glow.',
-    },
-    {
-      text: 'And because I believe luxury should feel effortless, your tan is finished wherever you feel most comfortable.',
-    },
+    { text: 'Pro Az Web believes a website should feel as premium as the business behind it.' },
+    { text: 'We design and build digital experiences that help founders and premium brands make a stronger first impression.' },
+    { text: 'Our process combines strategy, modern design, and clean performance-first development to create a polished online presence.' },
+    { text: 'Every site is tailored to the business, its audience, and the goals it wants to achieve.' },
   ] as { text: string; pull?: boolean }[],
 };
 
-export type ServiceId = 'come-to-meesh' | 'house-call' | 'mobile-party';
+export type ServiceId = 'strategy' | 'design' | 'build' | 'optimize' | 'support';
 
 export interface Service {
   id: ServiceId;
@@ -115,53 +73,93 @@ export interface Service {
   price: number;
   priceLabel: string;
   description: string;
-  onSite: boolean; // Meesh travels to the client
+  onSite: boolean;
   perPerson?: boolean;
   minPeople?: number;
 }
 
 export const SERVICES: Service[] = [
   {
-    id: 'come-to-meesh',
-    name: 'Come to Meesh',
-    price: 60,
-    priceLabel: '$60',
-    description: 'Custom full-body tan.',
+    id: 'strategy',
+    name: 'Brand Strategy',
+    price: 1800,
+    priceLabel: 'From $1.8k',
+    description: 'Positioning, messaging, and conversion strategy for premium brands.',
     onSite: false,
   },
   {
-    id: 'house-call',
-    name: 'House Call',
-    price: 75,
-    priceLabel: '$75',
-    description: 'Same custom tan at your home or hotel.',
-    onSite: true,
+    id: 'design',
+    name: 'Luxury Design',
+    price: 4200,
+    priceLabel: 'From $4.2k',
+    description: 'High-fidelity design and visual systems that feel premium.',
+    onSite: false,
   },
   {
-    id: 'mobile-party',
-    name: 'Mobile party',
-    price: 60,
-    priceLabel: '$60/person',
-    description: '3+ people, already on site.',
-    onSite: true,
-    perPerson: true,
-    minPeople: 3,
+    id: 'build',
+    name: 'Website Build',
+    price: 6200,
+    priceLabel: 'From $6.2k',
+    description: 'Modern frontend development, CMS integration, and launch support.',
+    onSite: false,
+  },
+  {
+    id: 'optimize',
+    name: 'Conversion Lift',
+    price: 2400,
+    priceLabel: 'From $2.4k',
+    description: 'UX and copy improvements focused on increasing conversion quality.',
+    onSite: false,
+  },
+  {
+    id: 'support',
+    name: 'Retainer Support',
+    price: 1200,
+    priceLabel: 'From $1.2k/mo',
+    description: 'Ongoing design and optimization support.',
+    onSite: false,
   },
 ];
 
+export const NAV_LINKS = [
+  { id: 'about', label: 'About' },
+  { id: 'services', label: 'Services' },
+  { id: 'process', label: 'Process' },
+  { id: 'contact', label: 'Contact' },
+];
+
+export const PRIMARY_EMAIL = 'hello@proazweb.com';
+export const REQUEST_SUBJECT = 'Project request';
+export const CTA_MESSAGE = `Hello Pro Az Web, I’d like to discuss a premium website project.`;
+
+export const buildMailtoLink = (subject: string, body: string) =>
+  `mailto:${PRIMARY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+export const SITE_COPY = {
+  hero: 'We design digital experiences that feel as premium as the business behind them.',
+  cta: 'Book a discovery call',
+  secondary: 'View services',
+};
+
+export const CONTACT_LINKS = [
+  { label: 'Email', href: buildMailtoLink(REQUEST_SUBJECT, CTA_MESSAGE) },
+  { label: 'Call', href: TEL_LINK },
+  { label: 'Text', href: buildSmsLink(CTA_MESSAGE) },
+];
+
 export const TRAVEL = {
-  name: 'Travel outside 15 miles',
-  label: '+$15–25',
-  min: 15,
-  max: 25,
+  name: 'Global delivery',
+  label: 'Remote-first',
+  min: 0,
+  max: 0,
 };
 
 export type TravelId = 'within' | 'outside' | 'unsure';
 
 export const TRAVEL_OPTIONS: { id: TravelId; label: string }[] = [
-  { id: 'within', label: 'Within 15 miles' },
-  { id: 'outside', label: 'Outside 15 miles (+$15–25)' },
-  { id: 'unsure', label: 'Not sure — Meesh will confirm' },
+  { id: 'within', label: 'Remote-first project' },
+  { id: 'outside', label: 'Hybrid / on-site support' },
+  { id: 'unsure', label: 'Not sure yet' },
 ];
 
 export interface AddOn {
@@ -169,61 +167,44 @@ export interface AddOn {
   name: string;
   price: number;
   description?: string;
-  group: 'treatment' | 'menu';
+  group: 'service' | 'package';
 }
 
-// Detailed treatment add-ons (from the supplied add-on guide)
 export const TREATMENTS: AddOn[] = [
   {
-    id: 'anti-aging',
-    name: 'Anti-Aging Concentrate',
-    price: 15,
-    description: 'Peptides + niacinamide (vitamin B3) mixed into the tan.',
-    group: 'treatment',
+    id: 'brand-messaging',
+    name: 'Brand messaging workshop',
+    price: 950,
+    description: 'Positioning and messaging clarity for premium services.',
+    group: 'service',
   },
   {
-    id: 'collagen',
-    name: 'Collagen Peptide Boost',
-    price: 15,
-    description: 'Collagen + vitamin C support added to the solution.',
-    group: 'treatment',
+    id: 'copywriting',
+    name: 'Conversion copywriting',
+    price: 1200,
+    description: 'Copy that communicates value and converts the right clients.',
+    group: 'service',
   },
   {
-    id: 'vitamin-bath',
-    name: 'Vitamin Bath',
-    price: 15,
-    description: 'Antioxidant cocktail with vitamins C, E, and fruit extracts.',
-    group: 'treatment',
+    id: 'ux-audit',
+    name: 'UX & conversion audit',
+    price: 1500,
+    description: 'Identify friction and opportunities to improve conversion.',
+    group: 'service',
   },
   {
-    id: 'hydration',
-    name: 'Hydration Drops',
-    price: 15,
-    description: 'Hyaluronic acid + glycerin moisture support.',
-    group: 'treatment',
-  },
-  {
-    id: 'firming',
-    name: 'Firming Drops',
-    price: 15,
-    description: 'Caffeine + ivy extract for a tighter-looking finish.',
-    group: 'treatment',
-  },
-  {
-    id: 'contouring',
-    name: 'Contouring',
-    price: 20,
-    description: 'A second, precise pass that sculpts—not just colors.',
-    group: 'treatment',
+    id: 'content-system',
+    name: 'Content system setup',
+    price: 1100,
+    description: 'Scalable structure for content and brand storytelling.',
+    group: 'service',
   },
 ];
 
-// Additional options from the original price list (kept separate, unrenamed)
 export const MENU_OPTIONS: AddOn[] = [
-  { id: 'rapid-rinse', name: 'Rapid rinse', price: 15, group: 'menu' },
-  { id: 'body-contour', name: 'Body contour', price: 20, group: 'menu' },
-  { id: 'vitamin-hydration-mix', name: 'Vitamin + hydration mix-in', price: 10, group: 'menu' },
-  { id: 'aftercare-lotion', name: 'Take-home aftercare lotion', price: 15, group: 'menu' },
+  { id: 'prototype', name: 'Interactive prototype', price: 1200, group: 'package' },
+  { id: 'seo-basics', name: 'SEO foundation', price: 1300, group: 'package' },
+  { id: 'launch-support', name: 'Launch support', price: 900, group: 'package' },
 ];
 
 export const ALL_ADDONS: AddOn[] = [...TREATMENTS, ...MENU_OPTIONS];
@@ -257,7 +238,7 @@ export function calculateEstimate({ serviceId, guests, addOnIds, travel }: Estim
   const people = service.perPerson ? Math.max(service.minPeople ?? 1, guests) : 1;
   const addOnsPerPerson = ALL_ADDONS.filter((a) => addOnIds.includes(a.id)).reduce(
     (sum, a) => sum + a.price,
-    0
+    0,
   );
   const subtotal = (service.price + addOnsPerPerson) * people;
   const applyTravel = service.onSite && travel === 'outside';
@@ -278,20 +259,20 @@ export function calculateEstimate({ serviceId, guests, addOnIds, travel }: Estim
   };
 }
 
-// Minimal primary navigation, in on-page order. "Book Now" is the CTA button, not a scroll link.
-export const NAV_LINKS = [
-  { id: 'about', label: 'About Meesh' },
-  { id: 'services', label: 'Services & Pricing' },
-  { id: 'retail', label: 'Retail' },
-];
+export const ESTIMATE_NOTE = 'Estimate only. The final scope and investment are confirmed in the discovery call.';
 
-export const ESTIMATE_NOTE =
-  'Estimate only. Meesh confirms your appointment and final price by text.';
-
-export const STATUS_LABELS: Record<string, string> = {
-  new: 'New',
-  contacted: 'Contacted',
-  confirmed: 'Confirmed',
-  declined: 'Declined',
-  completed: 'Completed',
+export const DEFAULT_BRAND_THEME = {
+  accent: '#7f6a52',
+  brand: '#1d1a18',
+  surface: '#f8f4ef',
 };
+
+export const SITE_TAGLINE = 'Premium websites for founder-led and premium businesses.';
+export const finalNote = 'Designed for businesses ready to look established and convert better.';
+export const QUOTE = 'The best digital experiences feel calm, elevated, and unmistakably clear.';
+export const MISSION = 'Turn business value into a polished digital experience that earns trust.';
+export const CONTACT_REASON = 'Tell us what you need and we’ll follow up with the next steps.';
+export const submitTitle = 'Send project inquiry';
+
+export default SITE;
+
