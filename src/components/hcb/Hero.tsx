@@ -3,9 +3,13 @@ import { ABOUT, BRAND, IMAGES, SERVICES } from '@/data/brand';
 
 interface HeroProps {
   onBook: () => void;
+  brandName?: string;
+  goal?: string;
 }
 
-export default function Hero({ onBook }: HeroProps) {
+export default function Hero({ onBook, brandName = 'Pro Az Web', goal }: HeroProps) {
+  const headlineGoal = goal?.trim() || 'Professional website design for a business ready to look established and convert more.';
+
   return (
     <section id="top" className="relative overflow-hidden bg-cream pt-[72px]">
       <div className="grain absolute inset-0" />
@@ -21,13 +25,12 @@ export default function Hero({ onBook }: HeroProps) {
               “{ABOUT.quote}”
             </p>
             <h1 className="display mt-8 text-[clamp(3.2rem,6.4vw,6.5rem)] text-espresso">
-              Elevated websites for
+              Premium websites for
               <br />
-              <em className="font-light italic text-bronze">premium brands.</em>
+              <em className="font-light italic text-bronze">{brandName}</em>
             </h1>
             <p className="mt-8 max-w-md text-[17px] leading-relaxed text-espresso/75">
-              Strategy, design, and development for founders and modern brands that want to look refined,
-              feel credible, and convert higher-quality attention.
+              {headlineGoal}
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <button onClick={onBook} className="btn-primary group">
@@ -57,7 +60,7 @@ export default function Hero({ onBook }: HeroProps) {
           <figure className="relative animate-fade-in overflow-hidden shadow-[0_30px_80px_-30px_rgba(0,0,0,0.45)] sm:ring-1 sm:ring-gold/25">
             <img
               src={IMAGES.heroTriptych}
-              alt="Luxury architecture and branding workspace"
+              alt="Luxury web design workspace"
               width={1476}
               height={704}
               sizes="(min-width: 1024px) 58vw, 100vw"

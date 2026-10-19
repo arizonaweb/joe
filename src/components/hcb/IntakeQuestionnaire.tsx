@@ -1,10 +1,11 @@
+import { useAppContext } from '@/contexts/AppContext';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useMemo, useState } from 'react';
 
 type Question = {
   id: string;
   label: string;
-  type: 'text' | 'textarea' | 'select' | 'multiselect' | 'date';
+  type: 'text' | 'textarea' | 'select' | 'multiselect';
   options?: string[];
   required?: boolean;
   placeholder?: string;
@@ -18,7 +19,7 @@ const questionSchema: Question[][] = [
   ],
   [
     { id: 'audience', label: 'Who are you trying to attract?', type: 'textarea', required: true, placeholder: 'Describe your ideal client or customer.' },
-    { id: 'positioning', label: 'What makes the brand different?', type: 'textarea', required: true, placeholder: 'Your differentiators, story, or positioning' },
+    { id: 'positioning', label: 'What makes the brand different?', type: 'textarea', required: true, placeholder: 'Your differentiators, story, or positioning.' },
     { id: 'references', label: 'Any reference brands or examples you love?', type: 'textarea', placeholder: 'Links or names' },
   ],
   [
@@ -34,21 +35,15 @@ const questionSchema: Question[][] = [
 ];
 
 export default function IntakeQuestionnaire() {
+  const { formAnswers, updateAnswer } = useAppContext();
   const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState<Record<string, string | string[]>>({});
-
   const activeQuestions = questionSchema[step];
   const totalSteps = questionSchema.length;
-
   const progress = useMemo(() => ((step + 1) / totalSteps) * 100, [step, totalSteps]);
-
-  const updateAnswer = (id: string, value: string | string[]) => {
-    setAnswers((prev) => ({ ...prev, [id]: value }));
-  };
 
   const isStepComplete = () =>
     activeQuestions.every((q) => {
-      const value = answers[q.id];
+      const value = formAnswers[q.id];
       if (!q.required) return true;
       if (Array.isArray(value)) return value.length > 0;
       return String(value ?? '').trim().length > 0;
@@ -64,23 +59,26 @@ export default function IntakeQuestionnaire() {
 
   const submitForm = () => {
     if (!isStepComplete()) return;
+
     const entries = questionSchema.flat().map((q) => {
-      const value = answers[q.id];
+      const value = formAnswers[q.id];
       const finalValue = Array.isArray(value) ? value.join(', ') : value ?? 'Not provided';
       return `${q.label}: ${finalValue}`;
     });
 
     const mailBody = [
-      'Hello Maison Atelier Studio,',
+      'Hello Pro Az Web,',
       '',
-      'I’d like to start a premium website project. Here are my project details:',
+      'I’d like to finalize my project. Here are my answers:',
       '',
       ...entries,
       '',
-      'Thank you,',
+      'Please review and send the next steps.',
+      '',
+      'Thank you.',
     ].join('\n');
 
-    window.location.href = `mailto:hello@maisonatelierstudio.com?subject=${encodeURIComponent('New project inquiry')}&body=${encodeURIComponent(mailBody)}`;
+    window.location.href = `mailto:aznic@usa.com?subject=${encodeURIComponent('Finalize Pro Az Web project')}&body=${encodeURIComponent(mailBody)}`;
   };
 
   return (
@@ -107,7 +105,7 @@ export default function IntakeQuestionnaire() {
 
               {question.type === 'text' && (
                 <input
-                  value={String(answers[question.id] ?? '')}
+                  value={String(formAnswers[question.id] ?? '')}
                   onChange={(e) => updateAnswer(question.id, e.target.value)}
                   className="field"
                   placeholder={question.placeholder}
@@ -116,7 +114,7 @@ export default function IntakeQuestionnaire() {
 
               {question.type === 'textarea' && (
                 <textarea
-                  value={String(answers[question.id] ?? '')}
+                  value={String(formAnswers[question.id] ?? '')}
                   onChange={(e) => updateAnswer(question.id, e.target.value)}
                   className="field min-h-28"
                   placeholder={question.placeholder}
@@ -125,7 +123,7 @@ export default function IntakeQuestionnaire() {
 
               {question.type === 'select' && (
                 <select
-                  value={String(answers[question.id] ?? '')}
+                  value={String(formAnswers[question.id] ?? '')}
                   onChange={(e) => updateAnswer(question.id, e.target.value)}
                   className="field cursor-pointer"
                 >
@@ -139,7 +137,7 @@ export default function IntakeQuestionnaire() {
               {question.type === 'multiselect' && (
                 <div className="mt-3 flex flex-wrap gap-2">
                   {question.options?.map((option) => {
-                    const current = Array.isArray(answers[question.id]) ? answers[question.id] : [];
+                    const current = Array.isArray(formAnswers[question.id]) ? formAnswers[question.id] : [];
                     const selected = current.includes(option);
                     return (
                       <button
@@ -172,7 +170,7 @@ export default function IntakeQuestionnaire() {
             </button>
           ) : (
             <button type="button" onClick={submitForm} disabled={!isStepComplete()} className="btn-primary group disabled:cursor-not-allowed disabled:opacity-50">
-              Send inquiry
+              Request finalization
               <CheckCircle2 className="h-4 w-4" />
             </button>
           )}

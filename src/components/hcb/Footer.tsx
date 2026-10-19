@@ -6,9 +6,10 @@ import { MessageIcon, SocialIcon } from './icons';
 
 interface Props {
   onBook: () => void;
+  brandName?: string;
 }
 
-export default function Footer({ onBook }: Props) {
+export default function Footer({ onBook, brandName = 'Pro Az Web' }: Props) {
   const go = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
@@ -19,7 +20,7 @@ export default function Footer({ onBook }: Props) {
           <div className="lg:col-span-5">
             <img
               src={IMAGES.leatherBanner}
-              alt="Maison Atelier premium digital studio"
+              alt="Pro Az Web premium web design"
               loading="lazy"
               width={1200}
               height={480}
@@ -41,7 +42,7 @@ export default function Footer({ onBook }: Props) {
                 Book a discovery call
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-1" strokeWidth={1.5} />
               </button>
-              <a href={buildMailtoLink('Project inquiry', 'Hello Maison Atelier Studio, I’d like to discuss a premium website project.')} className="btn-ghost">
+              <a href={buildMailtoLink('Project inquiry', `Hello Pro Az Web, I’d like to discuss a premium website project.`)} className="btn-ghost">
                 <MessageIcon /> Email us
               </a>
             </div>
@@ -62,7 +63,7 @@ export default function Footer({ onBook }: Props) {
                 height={512}
                 decoding="async"
               />
-              <p className="font-serif text-2xl tracking-[0.14em]">MAISON ATELIER</p>
+              <p className="font-serif text-2xl tracking-[0.14em]">{brandName}</p>
             </div>
             <p className="mt-6 max-w-xs text-[14px] leading-relaxed text-espresso/65">{BRAND.positioning}</p>
           </div>
@@ -103,13 +104,13 @@ export default function Footer({ onBook }: Props) {
             <p className="text-[10px] uppercase tracking-[0.3em] text-espresso/50">Contact</p>
             <ul className="mt-5 space-y-3 text-[14px] text-espresso/80">
               <li>
-                <a href={buildMailtoLink('Project inquiry', 'Hello Maison Atelier Studio, I’d like to discuss a premium website project.')} className="link-underline">Email us</a>
+                <a href={buildMailtoLink('Project inquiry', 'Hello Pro Az Web, I’d like to discuss a premium website project.')} className="link-underline">Email us</a>
               </li>
               <li>
                 <a href={TEL_LINK} className="link-underline">Call {BRAND.phoneDisplay}</a>
               </li>
               <li>
-                <a href={buildSmsLink('Hello Maison Atelier Studio, I’d like to discuss a premium website project.')} className="link-underline">Text {BRAND.phoneDisplay}</a>
+                <a href={buildSmsLink('Hello Pro Az Web, I’d like to discuss a premium website project.')} className="link-underline">Text {BRAND.phoneDisplay}</a>
               </li>
             </ul>
 
@@ -129,7 +130,7 @@ export default function Footer({ onBook }: Props) {
         </div>
 
         <div className="flex flex-col gap-3 border-t border-espresso/15 py-8 pb-24 text-[11px] tracking-[0.14em] text-espresso/50 md:flex-row md:justify-between md:pb-8">
-          <p>© {new Date().getFullYear()} Maison Atelier Studio</p>
+          <p>© {new Date().getFullYear()} {brandName}</p>
           <p className="flex gap-6">
             <span>Luxury websites with strategic clarity.</span>
             <Link to="/admin" className="text-espresso/35 hover:text-espresso/70">Studio</Link>
