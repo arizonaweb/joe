@@ -1,23 +1,23 @@
-// Maison Atelier Studio — universal luxury brand system.
-// This file is the single source of truth for the premium studio identity.
+// Pro Az Web — brand configuration for ProAzWeb.com
+// Centralized brand data used across the premium site.
 
 export const SITE = {
-  name: 'Maison Atelier Studio',
-  url: 'https://example.com',
+  name: 'Pro Az Web',
+  url: 'https://ProAzWeb.com',
   language: 'en',
 };
 
 export const BRAND = {
-  name: 'MAISON ATELIER',
-  artist: 'STUDIO',
-  tagline: 'Luxury web design for ambitious brands',
-  positioning: 'Strategy, design, and development for founders and premium businesses.',
-  serviceArea: 'Worldwide · Remote-first',
-  studioAddress: 'Remote-first studio · worldwide',
-  instagramHandle: '@maisonatelierstudio',
-  instagramUrl: 'https://www.instagram.com',
+  name: 'PRO AZ WEB',
+  artist: 'Pro Az Web',
+  tagline: 'Premium web design for businesses ready to look established and convert more',
+  positioning: 'Custom website design and development for founders, service businesses, and premium companies.',
+  serviceArea: 'Phoenix · Arizona · Worldwide',
+  studioAddress: 'Pro Az Web · Phoenix, AZ',
+  instagramHandle: '@ProAzWeb',
+  instagramUrl: 'https://www.instagram.com/ProAzWeb',
   whatsappUrl: 'https://wa.me/15551234567',
-  facebookUrl: 'https://www.facebook.com',
+  facebookUrl: 'https://www.facebook.com/ProAzWeb',
   tiktokUrl: 'https://www.tiktok.com',
   phoneDisplay: '+1 (555) 123-4567',
   phoneE164: '+15551234567',
@@ -68,24 +68,24 @@ export interface RetailItem {
 
 export const RETAIL: RetailItem[] = [
   {
-    id: 'atelier-retainer',
-    brand: 'Maison Atelier',
-    name: 'Creative Retainer',
-    description: 'Ongoing design support for premium brands that need clarity, consistency, and momentum.',
+    id: 'proaz-retainer',
+    brand: 'Pro Az Web',
+    name: 'Premium Retainer',
+    description: 'Ongoing design and development support for growing premium brands.',
     image: IMAGES.tee,
-    href: 'https://example.com',
+    href: 'https://ProAzWeb.com',
     cta: 'Book a discovery call',
   },
 ];
 
 export const ABOUT = {
-  quote: 'We believe the strongest brands feel effortless, elevated, and unmistakably clear.',
-  accolade: 'Designing premium digital experiences for businesses that want to lead with confidence.',
+  quote: 'We create polished websites that help brands look credible and convert better.',
+  accolade: 'Professional websites built for brands that expect quality.',
   story: [
-    { text: 'The best websites do more than look beautiful — they clarify positioning, build trust, and create momentum.' },
-    { text: 'We design and build digital experiences for founders and premium businesses who need more than a template. They need a strategic partner who understands how to convert attention into loyalty.' },
-    { text: 'Every project begins with context, clarity, and intent. We look beyond aesthetics to map what your audience needs, what your business is really selling, and how the website should carry that story.' },
-    { text: 'The result is elegant, high-converting, and built to feel as premium as the business behind it.' },
+    { text: 'Pro Az Web believes a website should reflect the quality of the business behind it.' },
+    { text: 'We combine strategic clarity with refined visual systems to deliver premium digital experiences.' },
+    { text: 'Our process focuses on clarity, conversion, and a tailored visual identity that supports business goals.' },
+    { text: 'We work with founders and premium service businesses who need a polished, high-trust online presence.' },
   ] as { text: string; pull?: boolean }[],
 };
 
@@ -108,7 +108,7 @@ export const SERVICES: Service[] = [
     name: 'Brand Strategy',
     price: 1800,
     priceLabel: 'From $1.8k',
-    description: 'Messaging, audience clarity, and strategic positioning for premium brands.',
+    description: 'Positioning, messaging, and conversion strategy for premium brands.',
     onSite: false,
   },
   {
@@ -116,7 +116,7 @@ export const SERVICES: Service[] = [
     name: 'Luxury Design',
     price: 4200,
     priceLabel: 'From $4.2k',
-    description: 'Editorial, conversion-focused website design with a premium visual system.',
+    description: 'High-fidelity design and visual systems that feel premium.',
     onSite: false,
   },
   {
@@ -124,7 +124,7 @@ export const SERVICES: Service[] = [
     name: 'Website Build',
     price: 6200,
     priceLabel: 'From $6.2k',
-    description: 'High-end frontend development, integrations, CMS setup, and launch support.',
+    description: 'Modern frontend development, CMS integration, and performance-first builds.',
     onSite: false,
   },
   {
@@ -132,7 +132,7 @@ export const SERVICES: Service[] = [
     name: 'Conversion Lift',
     price: 2400,
     priceLabel: 'From $2.4k',
-    description: 'UX refinements, copy direction, and funnel improvements that drive clearer results.',
+    description: 'UX and copy improvements focused on increasing conversion quality.',
     onSite: false,
   },
   {
@@ -140,7 +140,7 @@ export const SERVICES: Service[] = [
     name: 'Retainer Support',
     price: 1200,
     priceLabel: 'From $1.2k/mo',
-    description: 'Ongoing optimization, content updates, and strategic design support.',
+    description: 'Ongoing design and optimization support.',
     onSite: false,
   },
 ];
@@ -173,28 +173,28 @@ export const TREATMENTS: AddOn[] = [
     id: 'brand-messaging',
     name: 'Brand messaging workshop',
     price: 950,
-    description: 'Positioning and messaging clarity for premium products and services.',
+    description: 'Positioning and messaging clarity for premium services.',
     group: 'service',
   },
   {
     id: 'copywriting',
     name: 'Conversion copywriting',
     price: 1200,
-    description: 'Conversion-focused site copy for premium positioning and clarity.',
+    description: 'Copy that communicates value and converts the right clients.',
     group: 'service',
   },
   {
     id: 'ux-audit',
     name: 'UX & conversion audit',
     price: 1500,
-    description: 'Identify friction, missed signals, and conversion opportunities.',
+    description: 'Identify friction and opportunities to improve conversion.',
     group: 'service',
   },
   {
     id: 'content-system',
     name: 'Content system setup',
     price: 1100,
-    description: 'Structured content framework for scalable brand communications.',
+    description: 'Scalable structure for content and brand storytelling.',
     group: 'service',
   },
 ];
@@ -275,8 +275,8 @@ export const STATUS_LABELS: Record<string, string> = {
 };
 
 export const BRAND_STATS = [
-  { label: 'Luxury-first', value: 'Premium' },
-  { label: 'Project model', value: 'Strategy + build' },
+  { label: 'Premium', value: 'Professional' },
+  { label: 'Model', value: 'Strategy + Build' },
   { label: 'Turnaround', value: '4–8 weeks' },
 ];
 
@@ -304,7 +304,7 @@ export const CASE_STUDIES = [
 
 export const STUDIO_PROMISE = 'Premium design with strategic clarity for businesses that want to stand out.';
 
-export const PRIMARY_EMAIL = 'hello@maisonatelierstudio.com';
+export const PRIMARY_EMAIL = 'hello@proazweb.com';
 
 export const REQUEST_SUBJECT = 'New project inquiry';
 
@@ -314,7 +314,7 @@ export const SITE_COPY = {
   secondary: 'View services',
 };
 
-export const CTA_MESSAGE = `Hello Maison Atelier Studio, I’d like to discuss a premium website project.`;
+export const CTA_MESSAGE = `Hello Pro Az Web, I’d like to discuss a premium website project.`;
 
 export const buildMailtoLink = (subject: string, body: string) =>
   `mailto:${PRIMARY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -428,6 +428,8 @@ export const LEAD_MESSAGE = 'Let’s design a premium digital presence that refl
 
 export const CLIENT_PROFILE = 'Brands that want a polished, high-trust digital presence without a generic template feel.';
 
+export const DESIGN_PILLARS = ['Clarity','Trust','Positioning','Conversion'];
+
 export const siteTheme = {
   accent: DEFAULT_BRAND_THEME.accent,
   brand: DEFAULT_BRAND_THEME.brand,
@@ -450,7 +452,7 @@ export const HOME_COPY = {
 
 export const workingStyle = 'Refined, strategic, conversion-aware, premium.';
 
-export const SITE_TAGLINE = 'Luxury brand websites for founder-led and premium businesses.';
+export const SITE_TAGLINE = 'Premium websites for founder-led and premium businesses.';
 
 export const PROFESSIONAL_CAPABILITIES = [
   'Luxury branding',
@@ -481,4 +483,3 @@ export const SITE_INTENT = 'Premium websites for brands that want to feel elevat
 export const MISSION = 'Turn complex business value into a calm, refined digital experience that earns trust.';
 
 export default SITE;
-
