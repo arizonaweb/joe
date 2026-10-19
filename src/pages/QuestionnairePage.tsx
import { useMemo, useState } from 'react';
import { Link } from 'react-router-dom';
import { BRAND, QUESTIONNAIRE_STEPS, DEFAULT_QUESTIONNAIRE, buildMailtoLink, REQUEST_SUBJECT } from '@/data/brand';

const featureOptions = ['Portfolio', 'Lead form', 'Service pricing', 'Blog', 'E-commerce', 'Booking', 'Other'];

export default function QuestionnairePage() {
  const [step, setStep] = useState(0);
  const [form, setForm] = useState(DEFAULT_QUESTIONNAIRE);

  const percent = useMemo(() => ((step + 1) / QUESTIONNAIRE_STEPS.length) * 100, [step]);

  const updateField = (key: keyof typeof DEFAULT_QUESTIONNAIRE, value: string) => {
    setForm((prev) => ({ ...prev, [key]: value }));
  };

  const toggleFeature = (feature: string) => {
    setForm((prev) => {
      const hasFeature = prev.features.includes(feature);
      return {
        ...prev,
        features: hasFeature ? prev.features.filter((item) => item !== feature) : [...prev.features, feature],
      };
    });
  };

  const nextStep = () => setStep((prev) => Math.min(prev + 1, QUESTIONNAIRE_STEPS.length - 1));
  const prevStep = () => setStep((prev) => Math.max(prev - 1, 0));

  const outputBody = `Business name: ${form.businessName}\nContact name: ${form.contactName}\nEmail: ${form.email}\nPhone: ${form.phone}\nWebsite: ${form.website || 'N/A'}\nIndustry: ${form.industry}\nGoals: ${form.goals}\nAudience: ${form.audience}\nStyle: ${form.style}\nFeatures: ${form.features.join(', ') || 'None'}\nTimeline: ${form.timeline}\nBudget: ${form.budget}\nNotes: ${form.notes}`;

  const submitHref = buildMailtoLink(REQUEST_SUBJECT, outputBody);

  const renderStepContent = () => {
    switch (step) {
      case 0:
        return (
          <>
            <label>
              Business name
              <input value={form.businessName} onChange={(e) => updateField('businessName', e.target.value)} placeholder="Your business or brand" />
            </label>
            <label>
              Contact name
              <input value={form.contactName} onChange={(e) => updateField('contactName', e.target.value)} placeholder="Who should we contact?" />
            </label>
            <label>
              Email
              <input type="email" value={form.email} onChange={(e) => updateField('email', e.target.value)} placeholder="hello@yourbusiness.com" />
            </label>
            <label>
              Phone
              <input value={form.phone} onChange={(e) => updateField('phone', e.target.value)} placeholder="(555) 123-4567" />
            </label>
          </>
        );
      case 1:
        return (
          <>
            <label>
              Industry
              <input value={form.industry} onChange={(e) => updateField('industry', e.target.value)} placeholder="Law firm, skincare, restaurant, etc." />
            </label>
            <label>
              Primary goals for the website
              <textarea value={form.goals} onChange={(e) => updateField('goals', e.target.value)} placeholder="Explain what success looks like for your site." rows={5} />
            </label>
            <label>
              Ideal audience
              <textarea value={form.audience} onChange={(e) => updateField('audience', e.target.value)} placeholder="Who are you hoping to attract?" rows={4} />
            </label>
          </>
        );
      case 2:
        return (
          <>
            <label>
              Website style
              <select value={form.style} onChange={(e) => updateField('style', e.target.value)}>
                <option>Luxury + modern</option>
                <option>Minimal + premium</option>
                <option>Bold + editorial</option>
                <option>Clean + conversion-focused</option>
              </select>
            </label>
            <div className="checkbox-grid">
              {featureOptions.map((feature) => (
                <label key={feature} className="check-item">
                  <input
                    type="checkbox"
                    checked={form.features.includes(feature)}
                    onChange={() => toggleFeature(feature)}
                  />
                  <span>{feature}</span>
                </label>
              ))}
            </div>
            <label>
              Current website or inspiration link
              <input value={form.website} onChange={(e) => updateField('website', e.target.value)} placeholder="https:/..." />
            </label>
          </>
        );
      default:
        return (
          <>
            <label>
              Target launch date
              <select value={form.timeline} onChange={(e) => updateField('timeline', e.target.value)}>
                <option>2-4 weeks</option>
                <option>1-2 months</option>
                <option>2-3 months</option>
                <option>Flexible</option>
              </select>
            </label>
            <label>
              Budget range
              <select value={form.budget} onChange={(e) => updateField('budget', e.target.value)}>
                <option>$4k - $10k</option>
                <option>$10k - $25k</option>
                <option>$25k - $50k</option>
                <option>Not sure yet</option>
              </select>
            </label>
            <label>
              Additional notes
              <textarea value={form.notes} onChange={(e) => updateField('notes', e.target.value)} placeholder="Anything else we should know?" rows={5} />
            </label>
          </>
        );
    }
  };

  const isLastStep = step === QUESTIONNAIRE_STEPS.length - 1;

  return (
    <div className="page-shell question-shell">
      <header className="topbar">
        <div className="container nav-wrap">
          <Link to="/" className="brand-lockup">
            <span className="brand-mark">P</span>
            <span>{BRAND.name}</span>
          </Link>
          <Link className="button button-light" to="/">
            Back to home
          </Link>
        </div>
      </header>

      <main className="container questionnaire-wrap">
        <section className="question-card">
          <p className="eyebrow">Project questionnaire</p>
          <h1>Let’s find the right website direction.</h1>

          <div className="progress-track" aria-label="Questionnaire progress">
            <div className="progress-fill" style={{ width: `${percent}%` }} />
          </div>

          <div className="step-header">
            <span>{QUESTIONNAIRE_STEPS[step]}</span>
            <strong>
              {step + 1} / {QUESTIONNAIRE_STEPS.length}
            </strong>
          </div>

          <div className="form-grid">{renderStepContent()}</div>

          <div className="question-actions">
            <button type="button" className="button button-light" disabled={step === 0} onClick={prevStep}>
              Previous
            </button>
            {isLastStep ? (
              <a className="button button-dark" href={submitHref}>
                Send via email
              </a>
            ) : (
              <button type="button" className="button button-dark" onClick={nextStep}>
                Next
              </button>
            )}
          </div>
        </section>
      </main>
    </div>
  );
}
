@@ -1,0 +1,165 @@
+import { Link } from 'react-router-dom';
+import { BRAND, NAV_LINKS, PROCESS_STEPS, SERVICES, buildMailtoLink, CTA_MESSAGE } from '@/data/brand';
+
+const stats = [
+  { value: '12+', label: 'years of design & strategy experience' },
+  { value: '4-step', label: 'simple process from strategy to launch' },
+  { value: '100%', label: 'custom websites built around your business goals' },
+];
+
+export default function HomePage() {
+  return (
+    <div className="page-shell">
+      <header className="topbar">
+        <div className="container nav-wrap">
+          <div className="brand-lockup">
+            <span className="brand-mark">P</span>
+            <span>{BRAND.name}</span>
+          </div>
+          <nav className="main-nav" aria-label="Main navigation">
+            {NAV_LINKS.map((link) => (
+              <a key={link.id} href={`#${link.id}`}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
+          <a className="button button-dark" href={buildMailtoLink('Project request', CTA_MESSAGE)}>
+            Book a Call
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section className="hero section-pad">
+          <div className="container hero-grid">
+            <div>
+              <p className="eyebrow">Premium digital experiences</p>
+              <h1>{BRAND.tagline}</h1>
+              <p className="lede">{BRAND.positioning}</p>
+              <div className="cta-row">
+                <Link className="button button-dark" to="/questionnaire">
+                  Start the questionnaire
+                </Link>
+                <a className="button button-light" href={buildMailtoLink('Project request', CTA_MESSAGE)}>
+                  Email us
+                </a>
+              </div>
+              <div className="meta-row">
+                <span>{BRAND.serviceArea}</span>
+                <span>{BRAND.email}</span>
+              </div>
+            </div>
+            <div className="hero-panel">
+              <div className="mini-card">
+                <label>Brand clarity</label>
+                <strong>Message + positioning</strong>
+              </div>
+              <div className="mini-card highlight">
+                <label>Conversion</label>
+                <strong>Clear path to inquiry</strong>
+              </div>
+              <div className="mini-card">
+                <label>Experience</label>
+                <strong>Luxury design system</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="stats-bar">
+          <div className="container stats-grid">
+            {stats.map((stat) => (
+              <div key={stat.label} className="stat-item">
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="about" className="section-pad">
+          <div className="container two-col">
+            <div>
+              <p className="eyebrow">About</p>
+              <h2>Built for businesses that want to look trusted before the first call.</h2>
+            </div>
+            <div>
+              <p>
+                Pro Az Web helps businesses turn their value into a polished digital presence. We design premium websites that make your business feel established, credible, and easy to trust — from the first impression to the final inquiry.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="section-pad muted-panel">
+          <div className="container">
+            <div className="section-header">
+              <p className="eyebrow">Services</p>
+              <h2>Everything needed to launch a confident brand presence.</h2>
+            </div>
+            <div className="card-grid">
+              {SERVICES.map((service) => (
+                <article key={service.id} className="info-card">
+                  <span className="pill">{service.name}</span>
+                  <h3>{service.name}</h3>
+                  <p>{service.description}</p>
+                  <strong>From ${service.price.toLocaleString()}</strong>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="process" className="section-pad">
+          <div className="container">
+            <div className="section-header">
+              <p className="eyebrow">Process</p>
+              <h2>A simple framework that keeps the project clear and efficient.</h2>
+            </div>
+            <div className="process-grid">
+              {PROCESS_STEPS.map((step, index) => (
+                <div key={step.title} className="process-step">
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="section-pad cta-panel">
+          <div className="container cta-box">
+            <div>
+              <p className="eyebrow">Start your project</p>
+              <h2>Tell us what your business needs and we’ll help map the next steps.</h2>
+            </div>
+            <div className="cta-actions">
+              <Link className="button button-dark" to="/questionnaire">
+                Complete the questionnaire
+              </Link>
+              <a className="button button-light" href={buildMailtoLink('Project request', CTA_MESSAGE)}>
+                hello@proazweb.com
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="site-footer">
+        <div className="container footer-row">
+          <div>
+            <strong>{BRAND.name}</strong>
+            <p>{BRAND.serviceArea}</p>
+          </div>
+          <div className="footer-links">
+            <a href={buildMailtoLink('Project request', CTA_MESSAGE)}>Email</a>
+            <a href={BRAND.instagramUrl}>Instagram</a>
+            <a href={BRAND.facebookUrl}>Facebook</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+

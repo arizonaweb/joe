@@ -1,0 +1,127 @@
+export const SITE = {
+  name: 'Pro Az Web',
+  url: 'https://proazweb.com',
+  language: 'en',
+};
+
+export const BRAND = {
+  name: 'PRO AZ WEB',
+  artist: 'Pro Az Web',
+  tagline: 'Premium web design for businesses ready to look established and convert more',
+  positioning: 'Custom website design and development for founders, service businesses, and premium companies.',
+  serviceArea: 'Phoenix · Arizona · Worldwide',
+  studioAddress: 'Pro Az Web · Phoenix, AZ',
+  instagramHandle: '@ProAzWeb',
+  instagramUrl: 'https://www.instagram.com/ProAzWeb',
+  whatsappUrl: 'https://wa.me/15551234567',
+  facebookUrl: 'https://www.facebook.com/ProAzWeb',
+  tiktokUrl: 'https://www.tiktok.com',
+  phoneDisplay: '+1 (555) 123-4567',
+  phoneE164: '+15551234567',
+  email: 'hello@proazweb.com',
+};
+
+export const TEL_LINK = `tel:${BRAND.phoneE164}`;
+export const EMAIL_LINK = `mailto:${BRAND.email}`;
+
+export const NAV_LINKS = [
+  { id: 'about', label: 'About' },
+  { id: 'services', label: 'Services' },
+  { id: 'process', label: 'Process' },
+  { id: 'contact', label: 'Contact' },
+];
+
+export const SERVICES = [
+  {
+    id: 'strategy',
+    name: 'Brand Strategy',
+    price: 1800,
+    description: 'Positioning, messaging, and conversion strategy for premium brands.',
+  },
+  {
+    id: 'design',
+    name: 'Luxury Design',
+    price: 4200,
+    description: 'High-fidelity design and visual systems that feel premium.',
+  },
+  {
+    id: 'build',
+    name: 'Website Build',
+    price: 6200,
+    description: 'Modern frontend development, CMS integration, and launch support.',
+  },
+  {
+    id: 'optimize',
+    name: 'Conversion Lift',
+    price: 2400,
+    description: 'UX and copy improvements focused on increasing conversion quality.',
+  },
+];
+
+export const PROCESS_STEPS = [
+  { title: 'Discover', text: 'We learn the business, audience, offer, and the outcomes you want your site to create.' },
+  { title: 'Design', text: 'We shape a premium visual system with clear messaging and a confident conversion path.' },
+  { title: 'Build', text: 'We develop a polished, performant site that feels premium on every device.' },
+  { title: 'Launch', text: 'We refine and support launch so your brand shows up with clarity and authority.' },
+];
+
+export const QUESTIONNAIRE_STEPS = [
+  'About your business',
+  'Project goals',
+  'Website preferences',
+  'Timeline and budget',
+];
+
+export const DEFAULT_QUESTIONNAIRE = {
+  businessName: '',
+  contactName: '',
+  email: '',
+  phone: '',
+  website: '',
+  industry: '',
+  goals: '',
+  audience: '',
+  style: 'Luxury + modern',
+  features: ['Portfolio', 'Contact form'],
+  timeline: '2-4 weeks',
+  budget: '$4k - $10k',
+  notes: '',
+};
+
+export const SOCIAL_LINKS = [
+  { label: 'Instagram', href: BRAND.instagramUrl },
+  { label: 'WhatsApp', href: BRAND.whatsappUrl },
+  { label: 'Facebook', href: BRAND.facebookUrl },
+];
+
+export const buildMailtoLink = (subject: string, body: string) =>
+  `mailto:${BRAND.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+export const buildSmsLink = (body: string) =>
+  `sms:${BRAND.phoneE164}?body=${encodeURIComponent(body)}`;
+
+export const CTA_MESSAGE = `Hello Pro Az Web, I’d like to discuss a premium website project.`;
+export const REQUEST_SUBJECT = 'Project request';
+
+export const DEFAULT_BRAND_THEME = {
+  accent: '#7f6a52',
+  brand: '#1d1a18',
+  surface: '#f8f4ef',
+};
+
+export const SITE_TAGLINE = 'Premium websites for founder-led and premium businesses.';
+export const CONTACT_REASON = 'Tell us what you need and we’ll follow up with the next steps.';
+
+export default SITE;
+
+export const STATUS_LABELS = {
+  pending: 'Pending',
+  confirmed: 'Confirmed',
+  cancelled: 'Cancelled',
+};
+
+export const TRAVEL_OPTIONS = [
+  { id: 'within', label: 'Remote-first project' },
+  { id: 'outside', label: 'Hybrid / on-site support' },
+  { id: 'unsure', label: 'Not sure yet' },
+] as const;
