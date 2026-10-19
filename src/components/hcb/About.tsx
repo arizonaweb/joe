@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { ABOUT, BRAND, IMAGES } from '@/data/brand';
 import BrandImage from './BrandImage';
 import Reveal from './Reveal';
-import MeetMeesh from './MeetMeesh';
-import { InstagramIcon } from './icons';
 
 export default function About() {
-  const [meetMeeshOpen, setMeetMeeshOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <section id="about" className="section-shell">
@@ -17,7 +15,7 @@ export default function About() {
               <BrandImage
                 src={IMAGES.headshot}
                 fallback={IMAGES.fallbackSilk}
-                alt="Meesh, founder of House Call Bronze custom mobile spray tans in Spokane"
+                alt="Studio founder portrait"
                 width={640}
                 height={800}
                 sizes="(min-width: 768px) 260px, (min-width: 640px) 160px, 128px"
@@ -27,12 +25,10 @@ export default function About() {
               />
 
               <div className="md:mt-6">
-                <p className="font-serif text-2xl italic text-espresso">Meesh</p>
-
+                <p className="font-serif text-2xl italic text-espresso">Studio founder</p>
                 <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-gold">
-                  Founder · Spray tan artist
+                  Strategy · Design · Development
                 </p>
-
                 <span className="mt-4 hidden h-px w-12 bg-gold md:block" />
               </div>
             </div>
@@ -41,27 +37,21 @@ export default function About() {
 
         <div className="md:col-span-8 lg:col-span-8 lg:col-start-5">
           <Reveal>
-            <p className="eyebrow">About Meesh</p>
-
-            <h2
-              id="about-title"
-              className="display mt-6 text-[clamp(2.6rem,5vw,4.6rem)] text-espresso"
-            >
-              Hi, <em className="italic text-bronze">I’m Meesh.</em>
+            <p className="eyebrow">About the studio</p>
+            <h2 id="about-title" className="display mt-6 text-[clamp(2.6rem,5vw,4.6rem)] text-espresso">
+              We build refined digital <em className="italic text-bronze">brand experiences.</em>
             </h2>
-
             <p className="mt-6 max-w-xl text-[15px] leading-[1.9] text-espresso/75">
-              Want to know the story behind the glow?
+              Thoughtful design and strategic execution for brands that want to be taken seriously.
             </p>
-
             <button
               type="button"
-              onClick={() => setMeetMeeshOpen(true)}
+              onClick={() => setOpen(true)}
               aria-haspopup="dialog"
-              aria-controls="meet-meesh-dialog"
+              aria-controls="about-dialog"
               className="btn-primary mt-8 inline-flex items-center justify-center"
             >
-              Meet Meesh
+              Meet the studio
             </button>
           </Reveal>
 
@@ -73,9 +63,7 @@ export default function About() {
                     {p.text}
                   </p>
                 ) : (
-                  <p className="text-[15px] leading-[1.9] text-espresso/75">
-                    {p.text}
-                  </p>
+                  <p className="text-[15px] leading-[1.9] text-espresso/75">{p.text}</p>
                 )}
               </Reveal>
             ))}
@@ -88,27 +76,29 @@ export default function About() {
               rel="noopener noreferrer"
               className="mt-10 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-espresso"
             >
-              <InstagramIcon />
-
-              <span className="link-underline">
-                Follow {BRAND.instagramHandle}
-              </span>
+              <span className="link-underline">Follow {BRAND.instagramHandle}</span>
             </a>
           </Reveal>
         </div>
       </div>
 
-      {meetMeeshOpen && (
-        <div
-          id="meet-meesh-dialog"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="meet-meesh-title"
-          className="fixed inset-0 z-[100] overflow-y-auto"
-        >
-          <MeetMeesh onClose={() => setMeetMeeshOpen(false)} />
+      {open && (
+        <div id="about-dialog" role="dialog" aria-modal="true" aria-labelledby="studio-title" className="fixed inset-0 z-[100] overflow-y-auto">
+          <div className="flex min-h-screen items-center justify-center bg-black/50 p-6">
+            <div className="max-w-2xl bg-ivory p-8 text-espresso shadow-[0_30px_80px_-20px_rgba(0,0,0,0.4)]">
+              <p className="eyebrow">Our philosophy</p>
+              <h3 id="studio-title" className="display mt-4 text-4xl">The details make the difference.</h3>
+              <p className="mt-5 text-[15px] leading-[1.9] text-espresso/75">
+                We care about clarity, atmosphere, conversion, and trust. The strongest brands feel effortless and clear — because every detail has been considered.
+              </p>
+              <button type="button" onClick={() => setOpen(false)} className="btn-primary mt-8">
+                Close
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </section>
   );
 }
+
